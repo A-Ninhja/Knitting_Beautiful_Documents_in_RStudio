@@ -215,7 +215,7 @@ hljs.initHighlightingOnLoad();
 
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/r5/l8t2qxpj3m1_gnlf6ys7fwdm0000gq/T//RtmpiqoAcq/downloaded_packages
+##  /var/folders/r5/l8t2qxpj3m1_gnlf6ys7fwdm0000gq/T//RtmpV3si1j/downloaded_packages
 </code></pre>
 
 <p>You should try this with the <a href="http://yihui.name/knitr/">knitr package</a>. knitr is a fantastic package for converting the R markdown file (.Rmd) into an HTML document. The design of knitr allows any input languages (e.g. R, Python and awk) and any output markup languages (e.g. LaTeX, HTML, Markdown, AsciiDoc, and reStructuredText). I find Markdown to be the easies language to use to create documents for coursework/assignments. knitr is dynamic, so it will run your code and print the results below it. The best part is if you get new data or find an error in your code, you just re-knit the file and it&#39;s updated a few seconds later.</p>
@@ -243,7 +243,7 @@ hljs.initHighlightingOnLoad();
 
 <p>This is great but after kniting you are left with an HTML document. What if you want a PDF or Word Document? There may be other ways to do this, but I use <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> to covert the HTML file into other forms such as PDF or MS Word Documents. After installing pandoc, you use it via the command line. I use a Mac, so I just open the Terminal to get to my Bash Shell and <code>cd</code> to the folder containing my document, then just run</p>
 
-<pre><code>pandoc Knitting_Beautiful_Documents_in_RStudio.Rmd -o Knitting_Beautiful_Documents_in_RStudio.pdf
+<pre><code>pandoc Knitting_Beautiful_Documents_in_RStudio.md -o Knitting_Beautiful_Documents_in_RStudio.pdf
 </code></pre>
 
 <p>and I have a PDF. Unfortunately, the pandoc default is to have huge margins that look ridiculous. To correct for that you can save a style file in the folder with the document you&#39;re converting. To do that you just create a text file with the line:</p>
@@ -253,7 +253,7 @@ hljs.initHighlightingOnLoad();
 
 <p>and save it as something like <code>margins.sty</code>. Then in the command line you run</p>
 
-<pre><code>pandoc Knitting_Beautiful_Documents_in_RStudio.Rmd -o Knitting_Beautiful_Documents_in_RStudio.pdf -H margins.sty
+<pre><code>pandoc Knitting_Beautiful_Documents_in_RStudio.md -o Knitting_Beautiful_Documents_in_RStudio.pdf -H margins.sty
 </code></pre>
 
 <p>Now when you view the PDF it should have 1 inch margins and look much nicer. That is about it for making attractive, dynamic documents using R, RStudio, knitr, and pandoc. It seems like a lot but after doing it once or twice it becomes very quick and easy. I have yet to use it but there is also a package <a href="http://rapporter.github.io/pander/#examples">pander</a>, which allows you to skip the command line step and do the file conversion right in R (RStudio).</p>

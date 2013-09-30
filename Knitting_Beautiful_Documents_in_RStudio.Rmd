@@ -49,7 +49,7 @@ plot(cars)
 This is great but after kniting you are left with an HTML document. What if you want a PDF or Word Document? There may be other ways to do this, but I use [pandoc](http://johnmacfarlane.net/pandoc/) to covert the HTML file into other forms such as PDF or MS Word Documents. After installing pandoc, you use it via the command line. I use a Mac, so I just open the Terminal to get to my Bash Shell and `cd` to the folder containing my document, then just run
 
 ```
-pandoc Knitting_Beautiful_Documents_in_RStudio.Rmd -o Knitting_Beautiful_Documents_in_RStudio.pdf
+pandoc Knitting_Beautiful_Documents_in_RStudio.md -o Knitting_Beautiful_Documents_in_RStudio.pdf
 ```
 
 and I have a PDF. Unfortunately, the pandoc default is to have huge margins that look ridiculous. To correct for that you can save a style file in the folder with the document you're converting. To do that you just create a text file with the line:
@@ -61,7 +61,7 @@ and I have a PDF. Unfortunately, the pandoc default is to have huge margins that
 and save it as something like `margins.sty`. Then in the command line you run
 
 ```
-pandoc Knitting_Beautiful_Documents_in_RStudio.Rmd -o Knitting_Beautiful_Documents_in_RStudio.pdf -H margins.sty
+pandoc Knitting_Beautiful_Documents_in_RStudio.md -o Knitting_Beautiful_Documents_in_RStudio.pdf -H margins.sty
 ```
 
 Now when you view the PDF it should have 1 inch margins and look much nicer. That is about it for making attractive, dynamic documents using R, RStudio, knitr, and pandoc. It seems like a lot but after doing it once or twice it becomes very quick and easy. I have yet to use it but there is also a package [pander](http://rapporter.github.io/pander/#examples), which allows you to skip the command line step and do the file conversion right in R (RStudio).
